@@ -1,4 +1,4 @@
-// Generated from C:\Users\Declan Easton\Documents\Development\UMALS\Umals\src\UMALSGrammar\UMALS.g4 by ANTLR 4.4
+// Generated from C:\Users\Declan Easton\Documents\Development\UMALS\Umals\src\u005Cumals\recognizer\UMALS.g4 by ANTLR 4.4
 package umals.recognizer;
 import org.antlr.v4.runtime.misc.NotNull;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
@@ -328,6 +328,16 @@ public interface UMALSListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitField(@NotNull UMALSParser.FieldContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link UMALSParser#name}.
+	 * @param ctx the parse tree
+	 */
+	void enterName(@NotNull UMALSParser.NameContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link UMALSParser#name}.
+	 * @param ctx the parse tree
+	 */
+	void exitName(@NotNull UMALSParser.NameContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link UMALSParser#varSuffix}.
 	 * @param ctx the parse tree

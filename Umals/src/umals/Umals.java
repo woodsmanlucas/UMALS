@@ -10,6 +10,7 @@ import java.io.StringBufferInputStream;
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
+import umals.recognizer.UMALSBaseVisitor;
 import umals.recognizer.UMALSLexer;
 import umals.recognizer.UMALSParser;
 import umals.session.Session;
@@ -26,13 +27,10 @@ public class Umals {
     public static void main(String[] args) throws IOException {
         Session session = new Session();
         String in = 
-            "local a, b\n" +
-            "\n" +
-            "if(1 == 2) then\n" +
-            "	a = 5\n" +
-            "else\n" +
-            "	b = 6\n" +
-            "end";
+            "a\n" +
+            "Maxima c\n" +
+            "function set()\na=2\nend" +
+            "Maxima function set()\na=2\nend";
         StringBufferInputStream inputStream = new StringBufferInputStream(in);
         ANTLRInputStream input = new ANTLRInputStream(inputStream);
         UMALSLexer lexer = new UMALSLexer(input);
@@ -43,8 +41,9 @@ public class Umals {
         
     }
     
-    public static void execute(ParseTree sourceTree, Session session) {
-        
+    public static void execute(ParseTree tree, Session session) {
+        UMALSVisitorImpl visitor = new UMALSVisitorImpl();
+        visitor.visit(tree);
     }
     
 }

@@ -1,7 +1,0 @@
-local a, b
-
-if(1 == 2) then
-	a = 5
-else
-	b = 6
-end

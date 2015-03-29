@@ -44,31 +44,31 @@ stat
 | functioncall
 | label
 | 'break'
-| 'goto' NAME
-| 'do' block 'end'
+| 'goto' name
+| 'do' block
 | 'while' exp 'do' block 'end'
 | 'repeat' block 'until' exp
 | 'if' exp 'then' block ('elseif' exp 'then' block)* ('else' block)? 'end'
-| 'for' NAME '=' exp ',' exp (',' exp)? 'do' block 'end'
+| 'for' name '=' exp ',' exp (',' exp)? 'do' block 'end'
 | 'for' namelist 'in' explist 'do' block 'end'
 | 'function' funcname funcbody
-| 'local' 'function' NAME funcbody
+| 'local' 'function' name funcbody
 | 'local' namelist ('=' explist)?
 ;
 retstat
 : 'return' explist? ';'?
 ;
 label
-: '::' NAME '::'
+: '::' name '::'
 ;
 funcname
-: NAME ('.' NAME)* (':' NAME)?
+: name ('.' name)* (':' name)?
 ;
 varlist
 : var (',' var)*
 ;
 namelist
-: NAME (',' NAME)*
+: name (',' name)*
 ;
 explist
 : exp (',' exp)*
@@ -88,8 +88,11 @@ exp
 | exp operatorAnd exp
 | exp operatorOr exp
 ;
+name
+: SERVICENAME? NAME
+;
 var
-: (NAME | '(' exp ')' varSuffix) varSuffix*
+: (name | '(' exp ')' varSuffix) varSuffix*
 ;
 prefixexp
 : varOrExp nameAndArgs*
@@ -101,20 +104,20 @@ varOrExp
 : var | '(' exp ')'
 ;
 nameAndArgs
-: (':' NAME)? args
+: (':' name)? args
 ;
 varSuffix
-: nameAndArgs* ('[' exp ']' | '.' NAME)
+: nameAndArgs* ('[' exp ']' | '.' name)
 ;
 /*
 var
-: NAME | prefixexp '[' exp ']' | prefixexp '.' NAME
+: name | prefixexp '[' exp ']' | prefixexp '.' name
 ;
 prefixexp
 : var | functioncall | '(' exp ')'
 ;
 functioncall
-: prefixexp args | prefixexp ':' NAME args
+: prefixexp args | prefixexp ':' name args
 ;
 */
 args
@@ -136,7 +139,7 @@ fieldlist
 : field (fieldsep field)* fieldsep?
 ;
 field
-: '[' exp ']' '=' exp | NAME '=' exp | exp
+: '[' exp ']' '=' exp | name '=' exp | exp
 ;
 fieldsep
 : ',' | ';'
@@ -165,7 +168,10 @@ string
 ;
 // LEXER
 NAME
-: [a-zA-Z_][a-zA-Z_0-9]*
+: [a-z][a-zA-Z_0-9]*
+;
+SERVICENAME
+: [A-Z_][a-zA-Z_0-9]*
 ;
 NORMALSTRING
 : '"' ( EscapeSequence | ~('\\'|'"') )* '"'

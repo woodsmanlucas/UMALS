@@ -1,4 +1,4 @@
-// Generated from C:\Users\Declan Easton\Documents\Development\UMALS\Umals\src\UMALSGrammar\UMALS.g4 by ANTLR 4.4
+// Generated from C:\Users\Declan Easton\Documents\Development\UMALS\Umals\src\u005Cumals\recognizer\UMALS.g4 by ANTLR 4.4
 package umals.recognizer;
 
 import org.antlr.v4.runtime.ParserRuleContext;
@@ -396,6 +396,18 @@ public class UMALSBaseListener implements UMALSListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitField(@NotNull UMALSParser.FieldContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterName(@NotNull UMALSParser.NameContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitName(@NotNull UMALSParser.NameContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
