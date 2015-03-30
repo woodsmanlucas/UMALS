@@ -29,18 +29,6 @@ public class UMALSBaseListener implements UMALSListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterFuncname(@NotNull UMALSParser.FuncnameContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitFuncname(@NotNull UMALSParser.FuncnameContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterOperatorAnd(@NotNull UMALSParser.OperatorAndContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -149,6 +137,18 @@ public class UMALSBaseListener implements UMALSListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterPlainblock(@NotNull UMALSParser.PlainblockContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitPlainblock(@NotNull UMALSParser.PlainblockContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterNumber(@NotNull UMALSParser.NumberContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -252,6 +252,18 @@ public class UMALSBaseListener implements UMALSListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitExp(@NotNull UMALSParser.ExpContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterDirectblock(@NotNull UMALSParser.DirectblockContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitDirectblock(@NotNull UMALSParser.DirectblockContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

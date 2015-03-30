@@ -51,8 +51,7 @@ stat
 | 'if' exp 'then' block ('elseif' exp 'then' block)* ('else' block)? 'end'
 | 'for' name '=' exp ',' exp (',' exp)? 'do' block 'end'
 | 'for' namelist 'in' explist 'do' block 'end'
-| 'function' funcname funcbody
-| 'local' 'function' name funcbody
+| functiondef
 | 'local' namelist ('=' explist)?
 ;
 retstat
@@ -60,9 +59,6 @@ retstat
 ;
 label
 : '::' name '::'
-;
-funcname
-: name ('.' name)* (':' name)?
 ;
 varlist
 : var (',' var)*
@@ -124,7 +120,7 @@ args
 : '(' explist? ')' | tableconstructor | string
 ;
 functiondef
-: 'function' funcbody
+: 'function' name funcbody
 ;
 funcbody
 : '(' parlist? ')' block 'end'

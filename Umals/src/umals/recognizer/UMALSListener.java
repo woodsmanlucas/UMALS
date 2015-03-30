@@ -19,16 +19,6 @@ public interface UMALSListener extends ParseTreeListener {
 	 */
 	void exitOperatorUnary(@NotNull UMALSParser.OperatorUnaryContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link UMALSParser#funcname}.
-	 * @param ctx the parse tree
-	 */
-	void enterFuncname(@NotNull UMALSParser.FuncnameContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link UMALSParser#funcname}.
-	 * @param ctx the parse tree
-	 */
-	void exitFuncname(@NotNull UMALSParser.FuncnameContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link UMALSParser#operatorAnd}.
 	 * @param ctx the parse tree
 	 */
@@ -119,6 +109,16 @@ public interface UMALSListener extends ParseTreeListener {
 	 */
 	void exitVarOrExp(@NotNull UMALSParser.VarOrExpContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link UMALSParser#plainblock}.
+	 * @param ctx the parse tree
+	 */
+	void enterPlainblock(@NotNull UMALSParser.PlainblockContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link UMALSParser#plainblock}.
+	 * @param ctx the parse tree
+	 */
+	void exitPlainblock(@NotNull UMALSParser.PlainblockContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link UMALSParser#number}.
 	 * @param ctx the parse tree
 	 */
@@ -208,6 +208,16 @@ public interface UMALSListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitExp(@NotNull UMALSParser.ExpContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link UMALSParser#directblock}.
+	 * @param ctx the parse tree
+	 */
+	void enterDirectblock(@NotNull UMALSParser.DirectblockContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link UMALSParser#directblock}.
+	 * @param ctx the parse tree
+	 */
+	void exitDirectblock(@NotNull UMALSParser.DirectblockContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link UMALSParser#funcbody}.
 	 * @param ctx the parse tree

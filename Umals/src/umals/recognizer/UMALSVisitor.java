@@ -18,12 +18,6 @@ public interface UMALSVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitOperatorUnary(@NotNull UMALSParser.OperatorUnaryContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link UMALSParser#funcname}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitFuncname(@NotNull UMALSParser.FuncnameContext ctx);
-	/**
 	 * Visit a parse tree produced by {@link UMALSParser#operatorAnd}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -78,6 +72,12 @@ public interface UMALSVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitVarOrExp(@NotNull UMALSParser.VarOrExpContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link UMALSParser#plainblock}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitPlainblock(@NotNull UMALSParser.PlainblockContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link UMALSParser#number}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -131,6 +131,12 @@ public interface UMALSVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitExp(@NotNull UMALSParser.ExpContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link UMALSParser#directblock}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitDirectblock(@NotNull UMALSParser.DirectblockContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link UMALSParser#funcbody}.
 	 * @param ctx the parse tree

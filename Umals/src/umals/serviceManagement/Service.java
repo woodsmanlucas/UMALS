@@ -26,4 +26,9 @@ public class Service implements IService {
         return "toString has not yet been implemented";
     }
     
+    @Override
+    public String setVariable(String name, String value) {
+        return "setVariable has not yet been implemented";
+    }
+    
 }

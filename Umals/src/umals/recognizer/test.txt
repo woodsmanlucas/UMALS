@@ -3,3 +3,5 @@ a = 3
 function Local a() e=4 end
 function a() e=4 end
 Maxima b = Local c
+Local<-{a=5}
+--[a=5]
